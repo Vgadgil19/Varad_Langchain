@@ -1,0 +1,2 @@
+HumanMessage(content = 'give me details of order id #12345')
+AIMessage(content='Your order id #12345 is confirmed and will arrive within 2-4 working days')
