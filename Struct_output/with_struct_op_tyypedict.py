@@ -11,7 +11,7 @@ class review(TypedDict):
     sentiment : Annotated[Literal['pos', 'neg'], "Sentiment of the review positive, negative or mixed"]
     pros : Annotated[Optional[list[str]], "Write down all the pros inside the list"]
     cons : Annotated[Optional[list[str]], "Write down all the cons inside the list"]
-    name : Annotated[Optional[str], "Extract the name of human reviewer from the review. "]
+    name : Annotated[Optional[str], "Write down the name of the reviewer mentioned after the term 'review by' do not print the brand or model name."]
 
 structured_model = model.with_structured_output(review)
 result = structured_model.invoke("""I recently upgraded to the Samsung Galaxy S24 Ultra, and I must say, it’s an absolute powerhouse! The Snapdragon 8 Gen 3 processor makes everything lightning fast—whether I’m gaming, multitasking, or editing photos. The 5000mAh battery easily lasts a full day even with heavy use, and the 45W fast charging is a lifesaver.
@@ -30,3 +30,4 @@ Review by Varad G
 """)
 
 print(result['name'])
+# print(result)
