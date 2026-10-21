@@ -9,10 +9,10 @@ load_dotenv()
 model = ChatOpenAI(model = 'gpt-4.1-mini', max_tokens = 400, temperature=0.8)
 
 schema = [
-    ResponseSchema(name='Point_1', description='description of Point 1'),
-    ResponseSchema(name='Point_2', description='description of Point 2'),
-    ResponseSchema(name='Point_3', description='description of Point 3'),
-    ResponseSchema(name='Point_4', description='description of Point 4'),
+    ResponseSchema(name='Point_1', description='description of Point 1\n'),
+    ResponseSchema(name='Point_2', description='description of Point 2\n'),
+    ResponseSchema(name='Point_3', description='description of Point 3\n'),
+    ResponseSchema(name='Point_4', description='description of Point 4\n'),
     ResponseSchema(name='Point_5', description='description of Point 5')
 ]
 
@@ -42,5 +42,5 @@ result = chain.invoke({'topic' : 'Football'})
 print(result)
 
 #to print the graph of the chain--->
-chain.get_graph().print_ascii()
+#chain.get_graph().print_ascii()
 
